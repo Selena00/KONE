@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Club.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">FFSSM_Enonce</a> &gt; <a href="index.source.html" class="el_package">FFSSM</a> &gt; <span class="el_source">Club.java</span></div><h1>Club.java</h1><pre class="source lang-java linenums">/**
+ * @(#) Club.java
+ */
+package FFSSM;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+public class Club {
+
+ 
+    public Moniteur president;
+
+    public String nom;
+
+    public String adresse;
+
+    public String telephone;
+    
+<span class="fc" id="L22">    public List&lt;Plongee&gt; Lplongee = new LinkedList&lt;&gt;();</span>
+
+<span class="fc" id="L24">    public Club(Moniteur président, String nom, String telephone) {</span>
+<span class="fc" id="L25">        this.president = président;</span>
+<span class="fc" id="L26">        this.nom = nom;</span>
+<span class="fc" id="L27">        this.telephone = telephone;</span>
+<span class="fc" id="L28">    }</span>
+
+    public Set&lt;Plongee&gt; plongeesNonConformes() {
+         // TODO: Implémenter cette méthode
+<span class="fc" id="L32">        Set LplongeeNc = new HashSet();</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (Plongee object : Lplongee) {</span>
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">            if (!object.estConforme()) {</span>
+<span class="fc" id="L35">                LplongeeNc.add(object);</span>
+            }
+<span class="fc" id="L37">        }</span>
+        
+<span class="fc" id="L39">        return LplongeeNc;</span>
+    }
+
+    public void organisePlongee(Plongee p) {
+         // TODO: Implémenter cette méthode
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">            if(p==null)</span>
+<span class="nc" id="L45">                throw new IllegalArgumentException(&quot;La plongée est null&quot;);</span>
+<span class="fc" id="L46">            Lplongee.add(p);</span>
+<span class="fc" id="L47">    }</span>
+    
+    
+    public Moniteur getPresident() {
+<span class="nc" id="L51">        return president;</span>
+    }
+
+    public void setPresident(Moniteur président) {
+<span class="nc" id="L55">        this.president = président;</span>
+<span class="nc" id="L56">    }</span>
+
+    public String getNom() {
+<span class="nc" id="L59">        return nom;</span>
+    }
+
+    public void setNom(String nom) {
+<span class="nc" id="L63">        this.nom = nom;</span>
+<span class="nc" id="L64">    }</span>
+
+    public String getAdresse() {
+<span class="nc" id="L67">        return adresse;</span>
+    }
+
+    public void setAdresse(String adresse) {
+<span class="nc" id="L71">        this.adresse = adresse;</span>
+<span class="nc" id="L72">    }</span>
+
+    public String getTelephone() {
+<span class="nc" id="L75">        return telephone;</span>
+    }
+
+    public void setTelephone(String telephone) {
+<span class="nc" id="L79">        this.telephone = telephone;</span>
+<span class="nc" id="L80">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L84">        return &quot;Club{&quot; + &quot;président=&quot; + president + &quot;, nom=&quot; + nom + &quot;, adresse=&quot; + adresse + &quot;, telephone=&quot; + telephone + '}';</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
